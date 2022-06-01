@@ -20,7 +20,18 @@ function launchModal() {
   modalbg.style.display = "block";
 }
 
-// Close Modal form
+/**
+ * When the user clicks on the button, close the modal.
+ */
 function CloseModal() {
   modalbg.style.display = "none";
+}
+
+/**
+ * It checks if the given string is a valid email address
+ * @param mail - The email address to validate.
+ * @returns A boolean value.
+ */
+function CheckMail(mail) {
+  return (/^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i).test(mail);
 }
