@@ -1,3 +1,7 @@
+/**
+ * If the class name of the element with the id "myTopnav" is "topnav", then add "responsive" to the
+ * class name. Otherwise, set the class name to "topnav"
+ */
 function editNav() {
   let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -11,9 +15,6 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
