@@ -14,11 +14,10 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
-  margin: 0 auto;
+  padding : 0 1% 0 1%;
+  align-content: center;
 }
 
 p {
@@ -36,6 +35,7 @@ img {
 }
 .header-logo {
     float: left;
+  margin: 0 0 0 3%;
 }
 .main-navbar {
     float: right;
@@ -99,7 +99,7 @@ img {
     display: block;
     margin-top: -15px;
   }
-} 
+}
 
 main {
   font-size: 130%;
@@ -197,7 +197,7 @@ label {
 }
 input {
   padding: 8px;
-  border: 0.8px solid #ccc;
+  border: 1px solid #ccc;
   outline: none;
 }
 .text-control {
@@ -226,7 +226,7 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+/*
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
@@ -411,7 +411,7 @@ input[data-error]::after {
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+  margin : 0 3% 10px 3%;
 }
 .hero-content {
   padding: 51px 67px;
@@ -451,8 +451,7 @@ input[data-error]::after {
   text-transform: capitalize;
   font-size: 1.3rem;
   padding: 15px 23px;
-  margin: 0;
-  margin-top: 59px;
+  margin: 59px 0 0 0 ;
 }
 .hero-img {
   grid-column: span 8;
