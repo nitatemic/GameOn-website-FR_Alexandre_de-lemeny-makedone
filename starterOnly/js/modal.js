@@ -11,23 +11,19 @@ function editNav() {
   }
 }
 
-// DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
-
-// launch modal form
+/**
+ * When the user clicks the button, the modal is displayed
+ */
 function launchModal() {
-  modalbg.style.display = "block";
+  document.querySelector(".bground").style.display = "block";
 }
 
 /**
  * When the user clicks on the button, close the modal.
  */
 function CloseModal() {
-  modalbg.style.display = "none";
+  document.querySelector(".bground").style.display = "none";
 }
-
 
 function validate(event) {
   event.preventDefault();
@@ -36,11 +32,12 @@ function validate(event) {
   let checkbox = document.getElementById("checkbox1");
   let checkboxSpan = document.getElementById("checkboxSpan");
 
+  /* Checking if the checkbox is checked. If it is not checked, then the span element will turn red. */
   if (checkbox.checked !== true) {
     checkboxSpan.style.color = "red";
-    console.log("checkbox is not checked");
   }
 }
 
+/* Adding an event listener to the form element. When the form is submitted, the validate function will
+be called. */
 document.getElementById("form").addEventListener("submit", validate, true);
-
