@@ -270,7 +270,7 @@ input[data-error]::after {
   opacity: 0;
 }
 .checkbox-input {
-  display: none;
+  display : none;
 }
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {

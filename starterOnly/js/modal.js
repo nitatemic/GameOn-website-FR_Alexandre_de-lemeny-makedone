@@ -28,11 +28,19 @@ function CloseModal() {
   modalbg.style.display = "none";
 }
 
-/**
- * It checks if the given string is a valid email address
- * @param mail - The email address to validate.
- * @returns A boolean value.
- */
-function CheckMail(mail) {
-  return (/^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i).test(mail);
+
+function validate(event) {
+  event.preventDefault();
+  let birthdate = document.getElementById("birthdate").value;
+  let quantity = document.getElementById("quantity").value;
+  let checkbox = document.getElementById("checkbox1");
+  let checkboxSpan = document.getElementById("checkboxSpan");
+
+  if (checkbox.checked !== true) {
+    checkboxSpan.style.color = "red";
+    console.log("checkbox is not checked");
+  }
 }
+
+document.getElementById("form").addEventListener("submit", validate, true);
+
