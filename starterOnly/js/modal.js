@@ -27,19 +27,21 @@ function CloseModal() {
 
 function validate(event) {
   event.preventDefault();
+  let go = true;
   let firstName = document.getElementById("first");
   let lastName = document.getElementById("last");
   let mail = document.getElementById("email");
   let birthDate = document.getElementById("birthdate");
   let quantity = document.getElementById("quantity");
   let checkbox = document.getElementById("checkbox1");
-  let checkboxSpan = document.getElementById("checkboxSpan");
 
   if (firstName.value === "") {
+    go = false;
     firstName.style.borderColor = "red";
     document.getElementById("firstError").innerHTML = "Merci de renseigner votre prénom";
     firstName.reportValidity();
   } else if (firstName.value.length < 2) {
+    go = false;
     firstName.style.borderColor = "red";
     document.getElementById("firstError").innerHTML = "Votre prénom doit contenir au moins 2 caractères";
   } else {
@@ -48,9 +50,11 @@ function validate(event) {
   }
 
   if (lastName.value === "") {
+    go = false;
     lastName.style.borderColor = "red";
     document.getElementById("lastError").innerHTML = "Merci de renseigner votre nom";
   } else if (lastName.value.length < 2) {
+    go = false;
     lastName.style.borderColor = "red";
     document.getElementById("lastError").innerHTML = "Votre nom doit contenir au moins 2 caractères";
   } else {
@@ -60,9 +64,11 @@ function validate(event) {
 
   const regex = /^([a-z0-9]+(?:[._-][a-z0-9]+)*)@([a-z0-9]+(?:[.-][a-z0-9]+)*\.[a-z]{2,})$/i;
   if (mail.value === "") {
+    go = false;
     mail.style.borderColor = "red";
     document.getElementById("emailError").innerHTML = "Merci de renseigner votre adresse mail";
   } else if (!regex.test(mail.value)) {
+    go = false;
     mail.style.borderColor = "red";
     document.getElementById("emailError").innerHTML = "Votre adresse mail est invalide";
   } else {
@@ -70,12 +76,13 @@ function validate(event) {
     document.getElementById("emailError").innerHTML = "";
   }
 
-  //Récupération de l'année dans la date en récupérer la string anat le -
+  //Récupération de l'année dans la date
   let year = birthDate.value.split("-")[0];
   //Récupération de l'année actuelle
   let currentYear = new Date().getFullYear();
   //Si l'année de naissance est supérieur à l'année actuelle
   if (year > currentYear || year < 1900) {
+    go = false;
     birthDate.style.borderColor = "red";
     document.getElementById("birthdateError").innerHTML = "Votre date de naissance est invalide";
   } else {
@@ -84,13 +91,16 @@ function validate(event) {
   }
 
   if (quantity.value === "") {
+    go = false;
     quantity.style.borderColor = "red";
     document.getElementById("quantityError").innerHTML = "Tu as dû oublié de remplir ce champs";
   } else {
     if (quantity.value < 0) {
+      go = false;
       quantity.style.borderColor = "red";
       document.getElementById("quantityError").innerHTML = "Tu as indiqué un chiffre négatif, ce n'est pas possible";
     } else if (quantity.value > 99) {
+      go = false;
       quantity.style.borderColor = "red";
       document.getElementById("quantityError").innerHTML = "Tu as indiqué un chiffre trop grand, ce n'est pas possible";
     } else {
@@ -101,6 +111,7 @@ function validate(event) {
 
   /* Checking if the checkbox is checked. If it is not checked, then the span element will turn red. */
   if (checkbox.checked !== true) {
+    go = false;
     document.getElementById("checkboxError").innerHTML = "Merci d'accepter les conditions d'utilisation";
   } else {
     document.getElementById("checkboxError").innerHTML = "";
@@ -109,11 +120,16 @@ function validate(event) {
   //Récupérer le bouton radio sélectionné
   let radio = document.querySelector('input[name="location"]:checked');
   if (radio === null) {
+    go = false;
     document.getElementById("radioError").innerHTML = "Merci de choisir une option";
   } else {
     document.getElementById("radioError").innerHTML = "";
   }
+  if (go === true) {
+    console.log("Formulaire envoyé");
+  }
 }
+
 
 /* Adding an event listener to the form element. When the form is submitted, the validate function will
 be called. */

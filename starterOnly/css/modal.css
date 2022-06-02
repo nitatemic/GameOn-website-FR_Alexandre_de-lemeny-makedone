@@ -518,7 +518,7 @@ footer {
 
 .errorLabel {
   color: red;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 @keyframes modalopen {
   from {
