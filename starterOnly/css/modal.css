@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   font-family: var(--font-default);
   font-size: 18px;
-  padding : 0 1% 0 1%;
+  padding : 0;
   align-content: center;
 }
 
@@ -38,6 +38,8 @@ img {
 .navbar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  padding: 2% 0 2% 0;
 
 }
 .navButton  {
@@ -96,7 +98,6 @@ main {
   background: #fe142f;
   display: flex;
   margin: auto;
-  padding: 2em;
   color: #fff;
   padding: 0.75rem 2.5rem;
   border-radius: 1rem;
@@ -183,18 +184,6 @@ input {
   border-radius: 8px;
   font-size: 20px;
   height: 48px;
-}
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
 }
 
 .checkbox-label,
@@ -449,19 +438,40 @@ footer {
 
 @media screen and (max-width: 1084px) {
 
+  .content {
+    position: fixed;
+    bottom: 0;
+    max-width: 100%;
+    width : 100%;
+    height: 90%;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
   .hero-section {
+    padding-top : 60px;
     height : auto;
   }
   .navbar {
     display: grid;
     grid-template-areas:"header-logo   header-logo   navController"
                         " main-navbar    main-navbar    main-navbar";
-    margin : 4% 4% 0 4%;
+    padding: 2% 3% 2% 3%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 500;
+    background-color: white;
+    margin: 0;
   }
 
   .main-navbar{
     display: none;
     grid-area: main-navbar;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
   }
 
   .show{
@@ -472,8 +482,6 @@ footer {
 
   .navButton {
     display: block;
-
-
   }
 
   .navController  {
@@ -523,8 +531,6 @@ footer {
     text-align: center;
   }
 }
-
-
 
 @keyframes modalopen {
   from {
