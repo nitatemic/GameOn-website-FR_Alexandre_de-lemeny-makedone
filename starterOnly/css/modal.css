@@ -516,6 +516,10 @@ footer {
   }
 }
 
+.errorLabel {
+  color: red;
+  font-size: 1rem;
+}
 @keyframes modalopen {
   from {
     opacity: 0;
