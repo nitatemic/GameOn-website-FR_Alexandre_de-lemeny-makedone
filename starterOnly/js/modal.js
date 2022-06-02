@@ -27,10 +27,23 @@ function CloseModal() {
 
 function validate(event) {
   event.preventDefault();
-  let birthdate = document.getElementById("birthdate").value;
-  let quantity = document.getElementById("quantity").value;
+  let quantity = document.getElementById("quantity");
   let checkbox = document.getElementById("checkbox1");
   let checkboxSpan = document.getElementById("checkboxSpan");
+
+  if (quantity.value === "") {
+    quantity.setCustomValidity("Tu as dû oublié de remplir ce champs");
+    console.log("ici")
+  } else {
+    if (quantity.validity.rangeUnderflow) {
+      quantity.setCustomValidity("Tu as indiqué un chiffre négatif, ce n'est pas possible");
+    } else if (quantity.validity.rangeOverflow) {
+      quantity.setCustomValidity("Tu as indiqué un chiffre trop grand, ce n'est pas possible");
+    } else {
+      quantity.setCustomValidity("");
+    }
+  }
+  quantity.reportValidity();
 
   /* Checking if the checkbox is checked. If it is not checked, then the span element will turn red. */
   if (checkbox.checked !== true) {
