@@ -6,26 +6,27 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="topnav" id="myTopnav">
+    <div class="navbar" id="navbar">
       <div class="header-logo">
       <img alt="logo" src="img/Logo.png" width="auto" height="auto"/>
     </div>
-    <div class="main-navbar">
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
-        <i class="fa fa-bars"></i>
+      <a href="javascript:void(0);" class="navController" onclick="showNavbar()">
+        <i class="fa-solid fa-bars navController"></i>
       </a>
-    </div>
+      <div class="main-navbar" id="main-navbar">
+        <a href="#" class="navButton active"><span>Accueil</span></a>
+        <a href="#" class="navButton"><span>Détails de l'évènement</span></a>
+        <a href="#" class="navButton"><span>À propos</span></a>
+        <a href="#" class="navButton"><span>Contact</span></a>
+        <a href="#" class="navButton"><span>Évènements passés</span></a>
+      </div>
     </div>
     <main>
       <div class="hero-section">
@@ -214,6 +215,10 @@
                 value="C'est parti"
               />
             </form>
+            <div id="thankYou">
+              <span id="thankYouMessage">Merci ! Votre réservation a été reçue.</span>
+              <a onClick="CloseModal()" class="button btn-submit">Fermer</a>
+            </div>
           </div>
         </div>
       </div>

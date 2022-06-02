@@ -1,17 +1,4 @@
 /**
- * If the class name of the element with the id "myTopnav" is "topnav", then add "responsive" to the
- * class name. Otherwise, set the class name to "topnav"
- */
-function editNav() {
-  let x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-/**
  * When the user clicks the button, the modal is displayed
  */
 function launchModal() {
@@ -126,12 +113,38 @@ function validate(event) {
     document.getElementById("radioError").innerHTML = "";
   }
   if (go === true) {
-    console.log("Formulaire envoyé");
+  //Delete form
+  document.getElementById("form").style.display = "none";
+  //Display thank you message
+  document.getElementById("thankYou").style.display = "flex";
   }
 }
-
 
 /* Adding an event listener to the form element. When the form is submitted, the validate function will
 be called. */
 document.getElementById("form").addEventListener("submit", validate, true);
 
+//Fonction qui rejoute la class displayed à tout les boutons de la nav bar
+function addClass() {
+  let buttons = document.querySelectorAll(".navButton");
+  //Si la class est déjà présente, on la supprime
+if (buttons[0].classList.contains("displayed")) {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("displayed");
+  }
+} else {
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.add("displayed");
+    }
+  }
+}
+
+//fonction qui affiche main-navbar
+function showNavbar() {
+  if (document.getElementById("main-navbar").classList.contains("show")) {
+    document.getElementById("main-navbar").classList.remove("show");
+  } else {
+    let navbar = document.getElementById("main-navbar");
+    navbar.classList.add("show");
+  }
+}
