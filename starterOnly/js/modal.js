@@ -12,15 +12,19 @@ function CloseModal() {
   document.querySelector(".bground").style.display = "none";
 }
 
+/**
+ * It checks if the form is valid, if it is, it deletes the form and displays a thank you message
+ * @param event - The event object is a parameter that is passed to the function when it is invoked.
+ */
 function validate(event) {
   event.preventDefault();
   let go = true;
-  let firstName = document.getElementById("first");
-  let lastName = document.getElementById("last");
-  let mail = document.getElementById("email");
-  let birthDate = document.getElementById("birthdate");
-  let quantity = document.getElementById("quantity");
-  let checkbox = document.getElementById("checkbox1");
+  const firstName = document.getElementById("first");
+  const lastName = document.getElementById("last");
+  const mail = document.getElementById("email");
+  const birthDate = document.getElementById("birthdate");
+  const quantity = document.getElementById("quantity");
+  const checkbox = document.getElementById("checkbox1");
 
   if (firstName.value === "") {
     go = false;
@@ -64,9 +68,9 @@ function validate(event) {
   }
 
   //Récupération de l'année dans la date
-  let year = birthDate.value.split("-")[0];
+  const year = birthDate.value.split("-")[0];
   //Récupération de l'année actuelle
-  let currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   //Si l'année de naissance est supérieur à l'année actuelle
   if (year > currentYear || year < 1900) {
     go = false;
@@ -105,7 +109,7 @@ function validate(event) {
   }
 
   //Récupérer le bouton radio sélectionné
-  let radio = document.querySelector('input[name="location"]:checked');
+  const radio = document.querySelector('input[name="location"]:checked');
   if (radio === null) {
     go = false;
     document.getElementById("radioError").innerHTML = "Merci de choisir une option";
@@ -126,7 +130,7 @@ document.getElementById("form").addEventListener("submit", validate, true);
 
 //Fonction qui rejoute la class displayed à tout les boutons de la nav bar
 function addClass() {
-  let buttons = document.querySelectorAll(".navButton");
+  const buttons = document.querySelectorAll(".navButton");
   //Si la class est déjà présente, on la supprime
 if (buttons[0].classList.contains("displayed")) {
   for (let i = 0; i < buttons.length; i++) {
@@ -144,7 +148,7 @@ function showNavbar() {
   if (document.getElementById("main-navbar").classList.contains("show")) {
     document.getElementById("main-navbar").classList.remove("show");
   } else {
-    let navbar = document.getElementById("main-navbar");
+    const navbar = document.getElementById("main-navbar");
     navbar.classList.add("show");
   }
 }
