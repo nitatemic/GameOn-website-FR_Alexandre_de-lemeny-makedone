@@ -67,11 +67,14 @@ function validate(event) {
     document.getElementById("emailError").innerHTML = "";
   }
 
-  //Récupération de l'année dans la date
+  /* It gets the year from the birthdate. */
   const year = birthDate.value.split("-")[0];
-  //Récupération de l'année actuelle
+
+  /* It gets the current year. */
   const currentYear = new Date().getFullYear();
-  //Si l'année de naissance est supérieur à l'année actuelle
+
+  /* It checks if the year is greater than the current year or if it is less than 1900. If it is, it
+  displays an error message. */
   if (year > currentYear || year < 1900) {
     go = false;
     birthDate.style.borderColor = "red";
@@ -100,7 +103,8 @@ function validate(event) {
     }
   }
 
-  /* Checking if the checkbox is checked. If it is not checked, then the span element will turn red. */
+
+  /* It checks if the checkbox is checked, if it is not, it displays an error message. */
   if (checkbox.checked !== true) {
     go = false;
     document.getElementById("checkboxError").innerHTML = "Merci d'accepter les conditions d'utilisation";
@@ -108,7 +112,8 @@ function validate(event) {
     document.getElementById("checkboxError").innerHTML = "";
   }
 
-  //Récupérer le bouton radio sélectionné
+
+  /* It checks if the radio button is checked, if it is not, it displays an error message. */
   const radio = document.querySelector('input[name="location"]:checked');
   if (radio === null) {
     go = false;
@@ -128,22 +133,31 @@ function validate(event) {
 be called. */
 document.getElementById("form").addEventListener("submit", validate, true);
 
-//Fonction qui rejoute la class displayed à tout les boutons de la nav bar
+
+/**
+ * It adds a class to the buttons if it's not already there, and removes it if it is
+ */
 function addClass() {
   const buttons = document.querySelectorAll(".navButton");
-  //Si la class est déjà présente, on la supprime
+
+/* It checks if the first button has the class "displayed". If it does, it removes it from all the
+buttons. */
 if (buttons[0].classList.contains("displayed")) {
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].classList.remove("displayed");
   }
-} else {
+
+} else {  /* It adds the class "displayed" to all the buttons. */
     for (let i = 0; i < buttons.length; i++) {
       buttons[i].classList.add("displayed");
     }
   }
 }
 
-//fonction qui affiche main-navbar
+
+/**
+ * If the navbar is showing, hide it. If the navbar is hidden, show it
+ */
 function showNavbar() {
   if (document.getElementById("main-navbar").classList.contains("show")) {
     document.getElementById("main-navbar").classList.remove("show");
