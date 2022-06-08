@@ -5,6 +5,26 @@ function launchModal() {
   document.querySelector(".bground").style.display = "block";
 }
 
+
+/**
+ * It removes the error messages from the form and removes the red border from the input fields
+ */
+function removeErrors() {
+  /* It removes the error messages from the form. */
+  document.getElementById("firstError").innerHTML = "";
+  document.getElementById("lastError").innerHTML = "";
+  document.getElementById("emailError").innerHTML = "";
+  document.getElementById("birthdateError").innerHTML = "";
+  document.getElementById("quantityError").innerHTML = "";
+  document.getElementById("radioError").innerHTML = "";
+  document.getElementById("checkboxError").innerHTML = "";
+  /* It removes the red border from the input fields. */
+  document.getElementById("first").style.borderColor = "white";
+  document.getElementById("last").style.borderColor = "white";
+  document.getElementById("email").style.borderColor = "white";
+  document.getElementById("birthdate").style.borderColor = "white";
+  document.getElementById("quantity").style.borderColor = "white";
+}
 /**
  * When the user clicks on the button, close the modal.
  */
@@ -172,21 +192,4 @@ function showNavbar() {
     const navbar = document.getElementById("main-navbar");
     navbar.classList.add("show");
   }
-}
-
-/* Fonction qui enlève tous les messages d'erreur */
-function removeErrors() {
-  document.getElementById("firstError").innerHTML = "";
-  document.getElementById("lastError").innerHTML = "";
-  document.getElementById("emailError").innerHTML = "";
-  document.getElementById("birthdateError").innerHTML = "";
-  document.getElementById("quantityError").innerHTML = "";
-  document.getElementById("radioError").innerHTML = "";
-  document.getElementById("checkboxError").innerHTML = "";
-  /* Et retablir les bordures */
-  document.getElementById("first").style.borderColor = "white";
-  document.getElementById("last").style.borderColor = "white";
-  document.getElementById("email").style.borderColor = "white";
-  document.getElementById("birthdate").style.borderColor = "white";
-  document.getElementById("quantity").style.borderColor = "white";
 }
