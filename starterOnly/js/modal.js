@@ -10,6 +10,13 @@ function launchModal() {
  */
 function CloseModal() {
   document.querySelector(".bground").style.display = "none";
+  /* It resets the form. */
+  removeErrors();
+  document.forms[0].reset();
+  //Delete form
+  document.getElementById("form").style.display = "block";
+  //Display thank you message
+  document.getElementById("thankYou").style.display = "none";
 }
 
 /**
@@ -165,4 +172,21 @@ function showNavbar() {
     const navbar = document.getElementById("main-navbar");
     navbar.classList.add("show");
   }
+}
+
+/* Fonction qui enlève tous les messages d'erreur */
+function removeErrors() {
+  document.getElementById("firstError").innerHTML = "";
+  document.getElementById("lastError").innerHTML = "";
+  document.getElementById("emailError").innerHTML = "";
+  document.getElementById("birthdateError").innerHTML = "";
+  document.getElementById("quantityError").innerHTML = "";
+  document.getElementById("radioError").innerHTML = "";
+  document.getElementById("checkboxError").innerHTML = "";
+  /* Et retablir les bordures */
+  document.getElementById("first").style.borderColor = "white";
+  document.getElementById("last").style.borderColor = "white";
+  document.getElementById("email").style.borderColor = "white";
+  document.getElementById("birthdate").style.borderColor = "white";
+  document.getElementById("quantity").style.borderColor = "white";
 }
