@@ -5,11 +5,38 @@ function launchModal() {
   document.querySelector(".bground").style.display = "block";
 }
 
+
+/**
+ * It removes the error messages from the form and removes the red border from the input fields
+ */
+function removeErrors() {
+  /* It removes the error messages from the form. */
+  document.getElementById("firstError").innerHTML = "";
+  document.getElementById("lastError").innerHTML = "";
+  document.getElementById("emailError").innerHTML = "";
+  document.getElementById("birthdateError").innerHTML = "";
+  document.getElementById("quantityError").innerHTML = "";
+  document.getElementById("radioError").innerHTML = "";
+  document.getElementById("checkboxError").innerHTML = "";
+  /* It removes the red border from the input fields. */
+  document.getElementById("first").style.borderColor = "white";
+  document.getElementById("last").style.borderColor = "white";
+  document.getElementById("email").style.borderColor = "white";
+  document.getElementById("birthdate").style.borderColor = "white";
+  document.getElementById("quantity").style.borderColor = "white";
+}
 /**
  * When the user clicks on the button, close the modal.
  */
 function CloseModal() {
   document.querySelector(".bground").style.display = "none";
+  /* It resets the form. */
+  removeErrors();
+  document.forms[0].reset();
+  //Delete form
+  document.getElementById("form").style.display = "block";
+  //Display thank you message
+  document.getElementById("thankYou").style.display = "none";
 }
 
 /**
