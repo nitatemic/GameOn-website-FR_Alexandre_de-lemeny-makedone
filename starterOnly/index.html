@@ -14,9 +14,9 @@
   <body>
     <div class="navbar" id="navbar">
       <div class="header-logo">
-      <img alt="Logo" src="img/Logo.png" width="auto" height="auto"/>
+      <img alt="Logo de GameOn" src="img/Logo.png"/>
     </div>
-      <a class="navController" onclick="showNavbar()">
+      <a class="navController">
         <i class="fa-solid fa-bars navController"></i>
       </a>
       <div class="main-navbar" id="main-navbar">
@@ -38,21 +38,21 @@
             Vous aimez jouer ? Notre prochain évènement gaming est ouvert
             aux réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn" onClick="launchModal()">
+          <button class="btn-signup modal-btn">
             Je M'inscris
           </button>
         </div>
         <div class="hero-img">
           <img src="img/bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn" onClick="launchModal()">
+        <button class="btn-signup modal-btn">
           Je M'inscris
         </button>
       </div>
 
       <div class="bground">
         <div class="content">
-          <span class="close" onClick="CloseModal()"></span>
+          <span class="close"></span>
           <div class="modal-body">
             <form
               name="reserve"
@@ -220,7 +220,7 @@
             </form>
             <div id="thankYou">
               <span id="thankYouMessage">Merci ! Votre réservation a été reçue.</span>
-              <a onClick="CloseModal()" class="button btn-submit">Fermer</a>
+              <a  class="close-btn button btn-submit">Fermer</a>
             </div>
           </div>
         </div>
