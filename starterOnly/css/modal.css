@@ -131,10 +131,6 @@ main {
   background: #3876ac;
 }
 
-.smFont {
-  font-size: 16px;
-}
-
 .bground {
   display: none;
   position: fixed;
@@ -159,6 +155,7 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .modal-body {
@@ -194,7 +191,7 @@ input {
   font-size: 12px;
   font-weight: normal;
 }
-.checkbox-label .checkbox-icon,
+.checkbox-label .checkbox-icon,on
 .checkbox2-label .checkbox-icon {
   display: block;
   width: 20px;
