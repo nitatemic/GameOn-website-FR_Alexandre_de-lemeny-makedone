@@ -14,7 +14,7 @@
   <body>
     <div class="navbar" id="navbar">
       <div class="header-logo">
-      <img alt="logo" src="img/Logo.png" width="auto" height="auto"/>
+      <img alt="Logo" src="img/Logo.png" width="auto" height="auto"/>
     </div>
       <a class="navController" onclick="showNavbar()">
         <i class="fa-solid fa-bars navController"></i>
@@ -66,7 +66,7 @@
                   type="text"
                   name="first"
                   id="first"
-
+                  autocomplete="given-name"
                 />
                 <span id="firstError" class="errorLabel"></span>
                 <br>
@@ -79,6 +79,7 @@
                   type="text"
                   id="last"
                   name="last"
+                  autocomplete="family-name"
                 />
                 <span id="lastError" class="errorLabel"></span><br>
               </div>
@@ -90,6 +91,7 @@
                   type="email"
                   id="email"
                   name="email"
+                  autocomplete="email"
                 />
                 <span id="emailError" class="errorLabel"></span><br>
               </div>
@@ -102,6 +104,7 @@
                   id="birthdate"
                   name="birthdate"
                   required
+                  autocomplete="bday"
                 />
                 <span id="birthdateError" class="errorLabel"></span><br>
               </div>
