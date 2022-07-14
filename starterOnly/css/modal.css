@@ -191,7 +191,7 @@ input {
   font-size: 12px;
   font-weight: normal;
 }
-.checkbox-label .checkbox-icon,on
+.checkbox-label .checkbox-icon,
 .checkbox2-label .checkbox-icon {
   display: block;
   width: 20px;
